@@ -1,0 +1,114 @@
+<!doctype html>
+
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Graphql slides - CodersCantabria</title>
+
+        <script>
+            (function (d, ua) {
+                if ((ua.indexOf('chrome') > -1) || (ua.indexOf('safari') > -1 && ua.indexOf("mobile") === -1)) {
+                    d.className += " supported ";
+                }
+            })(document.documentElement, navigator.userAgent.toLowerCase());
+        </script>
+
+        <meta name="description" content="graphql">
+        <meta name="author" content="rocimunoz" />
+        <meta name="keywords" content="graphql server">
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="js/prefixfree.js"></script>
+    </head>
+    <body>
+
+        <div class="fallback-message">
+            <p>This presentation was build for latest <b>Chrome</b> or <b>Safari</b> browser.</p>
+            <p>You are viewing simplified view, but most of the CSS 3D will not work for you, sorry.</p>
+        </div>
+
+        <div id="impress">
+
+            <div id="title" class="step">
+                <h3>
+                    <span class="css"><span class="d3">graphql</span></span><br>
+                    <!--<span class="transforms"><em>lalalalalala</em></span>-->
+                </h3>
+                <span class="author">
+                    <i>by</i><br/>
+                    <span class="name">@roci_munoz</span>
+                    <span class="name">https://github.com/rocimunoz</span>
+                </span>
+                <span>
+                    <img id="imgGit" src="images/logo.png" alt="git"><!-- no funciona -->
+                </span>
+
+            </div>
+            <!-- First Slide -->
+            <div id="intro" class="step" data-x="600" data-y="-1200"  data-rotate="100"  data-scale="1">
+                <h2>intro to VCS</h2>
+                <h3><b> Version Control Systems (VCS)</b></h3>
+                <ul>
+                    <li><i>wise</i> programmers use a VCS in <b>code development</b></li>
+                    <li><b>tracks</b> and <b>provides control</b> over changes of data</li>
+                    <li><i>more importantly</i> helps <b>collaboration!</b></li>
+                    <li><b>storing</b> versions of code</li>
+                    <li><b>restoring</b> code to a previous version</li>
+                    <li><b>comparing changes</b> over time</li>
+                    <li>understanding <b>what happened</b></li>
+                    <li>see <b>who to blame</b> for a bug</li>
+                    <li>supports the <b>consistency & integrity</b> of data </li>
+                    <li>provides a <b>backup</b> of your work</li>
+                </ul>
+            </div>
+
+
+
+
+
+            <!-- Remote repositories -->
+            <div id="remote" class="step" data-x="-850" data-y="2500" data-rotate="80" data-scale="1">
+                <h2><span class="blueBack">On-line repos!</span></h2>
+                <h3>git remote <img id="imgRemote" src="images/remote.svg" alt="remote"></h3>
+                <ul>
+                    <li>The whole thing is about <b>collaboration!</b></li>
+                    <li><code>git</code> does not have a central repository like <code>SVN</code></li>
+                    <li>Repositories have to be uploaded for sharing</li>
+                    <li>All repositories are <b>equal</b></li>
+                    <li>Isolated environment - manual synchronization</li>
+                    <li>Supported protocols - <b>http, https, git, filesystem</b></li>
+                    <li>Creates pointers like <code>branch</code>, pointing to other repo's commit objects</li>
+                    <li><code>git remote</code> - Create connections & give nick names to online repos</li>
+                    <li><code><span class='shell'>$</span> git remote add forU https://github.com/papadako/git-a-little-tale.git</code>
+                    <li>Remote pointers are updated when we have network traffic</li>
+
+                </ul>
+            </div>
+
+
+
+        </div>
+
+        <script src="js/impress.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script src="js/script.js"></script>
+
+        <script type="text/javascript">
+            impress().init();
+            document.getElementById('hippalusVideo').play();
+
+            // Add callbacks for images animation in merge part
+            // Need it when going back
+
+
+            // Add callbacks for images animation for second merge part
+            // Need it when going back
+
+
+        </script>
+    </body>
+</html>
