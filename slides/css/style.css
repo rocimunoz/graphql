@@ -1044,7 +1044,8 @@ span.thanks{
 }
 
 .pinkBack{
-    background: HotPink;
+    background: #e10098;
+    color:white;
 }
 
 .redBack{
