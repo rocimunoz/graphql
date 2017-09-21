@@ -6,6 +6,7 @@ var regionModel = connector.Region;
 var kingdomModel = connector.Kingdom;
 var titleModel = connector.Title;
 var houseModel = connector.House;
+var peopleModel = connector.People;
 
 module.exports = {
   Query: {
@@ -23,6 +24,9 @@ module.exports = {
         },
         allTitles(_, args){
             return titleModel.findAll({where: args});
+        },
+        allPeople(_, args){
+            return peopleModel.findAll({where: args});
         },
     },
 };

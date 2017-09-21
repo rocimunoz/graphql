@@ -11,7 +11,7 @@ const start = async => {
   //const mysql =  connectMysql();
   var app = express();
   app.use('/graphql', bodyParser.json(), graphqlExpress({
-    context: {connectMysql}, // 4
+    context: {connectMysql}, 
     schema
   }));
   app.use('/graphiql', graphiqlExpress({
