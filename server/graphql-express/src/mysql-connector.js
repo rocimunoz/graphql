@@ -1,72 +1,61 @@
-var sequelize = require('sequelize');
+var Sequelize = require('sequelize');
 
-const db = new sequelize('graphql', "graphql", "graphql", {
+const db = new Sequelize('graphql', "graphql", "graphql", {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    define: {
+        timestamps: false
+    }
 });
 
+const dm = {};
 
-const Continent = db.define('GQL_continents', {
-  id: {
-    type: sequelize.UUID,
-    primaryKey: true
-  },
-  name: sequelize.STRING
-},{timestamps: false});
 
-const Region = db.define('GQL_regions', {
-  id: {
-    type: sequelize.UUID,
-    primaryKey: true
-  },
-  name: sequelize.STRING,
-  id_continent: sequelize.UUID,
-  id_kingdom: sequelize.UUID
-},{timestamps: false});
 
-const House = db.define('GQL_houses', {
-  id: {
-    type: sequelize.UUID,
-    primaryKey: true
-  },
-  name: sequelize.STRING,
-  slogan: sequelize.STRING
-},{timestamps: false});
+dm.Continent = db.define("GQL_continents", {
+    id:         { type: Sequelize.UUID,        primaryKey: true  },
+    name:       { type: Sequelize.STRING(100), allowNull:  false }
+});
 
-const Kingdom = db.define('GQL_kingdoms', {
-  id: {
-    type: sequelize.UUID,
-    primaryKey: true
-  },
-  name: sequelize.STRING,
-    capital: sequelize.STRING
-},{timestamps: false});
+dm.Region = db.define("GQL_regions", {
+    id:         { type: Sequelize.UUID,        primaryKey: true  },
+    name:       { type: Sequelize.STRING(100), allowNull:  false }
+});
 
-const Title = db.define('GQL_titles', {
-  id: {
-    type: sequelize.UUID,
-    primaryKey: true
-  },
-  name: sequelize.STRING,
-  id_house: sequelize.INTEGER
-},{timestamps: false});
+dm.House = db.define("GQL_houses", {
+    id:         { type: Sequelize.UUID,        primaryKey: true  },
+    name:       { type: Sequelize.STRING(100), allowNull:  false },
+    slogan:       { type: Sequelize.STRING(100), allowNull:  true }
+});
 
-const People = db.define('GQL_people', {
-  id: {
-    type: sequelize.UUID,
-    primaryKey: true
-  },
-  name: sequelize.STRING,
-  nickname: sequelize.STRING,
-  id_house: sequelize.UUID
-},{timestamps: false});
+dm.Kingdom = db.define("GQL_kingdoms", {
+    id:         { type: Sequelize.UUID,        primaryKey: true  },
+    name:       { type: Sequelize.STRING(100), allowNull:  false },
+    capital:       { type: Sequelize.STRING(100), allowNull:  true }
+});
 
+dm.Title = db.define("GQL_titles", {
+    id:         { type: Sequelize.UUID,        primaryKey: true  },
+    name:       { type: Sequelize.STRING(100), allowNull:  false }
+});
+
+dm.People = db.define("GQL_people", {
+    id:         { type: Sequelize.UUID,        primaryKey: true  },
+    name:       { type: Sequelize.STRING(100), allowNull:  false },
+    nickname:   { type: Sequelize.STRING(100), allowNull:  true }
+});
+
+//dm.Continent.hasMany(dm.Region);
+dm.Region.belongsTo(dm.Continent, { foreignKey: "id_continent"    });
+dm.Kingdom.hasOne   (dm.Region,  {  foreignKey: "id_kingdom"   });
+dm.Kingdom.belongsTo(dm.House, { foreignKey: "id"    });
+dm.Title.belongsTo(dm.House, {  foreignKey: "id"    });
+/*
 Region.belongsTo(Continent, {foreignKey: 'id'});
-//Region.belongsTo(Kingdom, {foreignKey: 'id'});
 Kingdom.hasOne(Region, {foreignKey:'id_kingdom'});
 Kingdom.belongsTo(House, { foreignKey: 'id' })
-Title.belongsTo(House, {foreignKey: 'id'});
+Title.belongsTo(House, {foreignKey: 'id'});*/
 
 db.sync();
 
-module.exports = { Continent, Region, Kingdom, Title, House, People };
+module.exports = { dm };

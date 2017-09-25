@@ -1,32 +1,34 @@
 
 const connector = require('../mysql-connector');
 
-var continentModel = connector.Continent;
-var regionModel = connector.Region;
-var kingdomModel = connector.Kingdom;
-var titleModel = connector.Title;
-var houseModel = connector.House;
-var peopleModel = connector.People;
+var continent = connector.dm.Continent;
+var region = connector.dm.Region;
+var kingdom = connector.dm.Kingdom;
+var title = connector.dm.Title;
+var house = connector.dm.House;
+var people = connector.dm.People;
 
 module.exports = {
   Query: {
         allContinents(_, args){
-          return continentModel.findAll({where: args});
+          return continent.findAll({ include: [{ all: true, nested: true }]}, {where: args});
         },
         allRegions(_, args){
-            return regionModel.findAll({where: args});
+            return region.findAll({include: [ { model: continent, as: 'GQL_continent' } ]}, {where: args});
         },
         allKingdoms(_, args){
-            return kingdomModel.findAll({where: args});
+            return kingdom.findAll({where: args});
         },
         allHouses(_, args){
-            return houseModel.findAll({where: args});
+            return house.findAll({where: args});
         },
         allTitles(_, args){
-            return titleModel.findAll({where: args});
+            return title.findAll({where: args});
         },
         allPeople(_, args){
-            return peopleModel.findAll({where: args});
+            return people.findAll({where: args});
         },
     },
+
+
 };

@@ -12,6 +12,7 @@ const typeDefs = `
   type Region {
     id: ID!
     name: String!
+    continent: Continent
 
   }
 
