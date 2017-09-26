@@ -10,8 +10,6 @@ const db = new Sequelize('graphql', "graphql", "graphql", {
 
 const dm = {};
 
-
-
 dm.Continent = db.define("GQL_continents", {
     id:         { type: Sequelize.UUID,        primaryKey: true  },
     name:       { type: Sequelize.STRING(100), allowNull:  false }
@@ -45,16 +43,12 @@ dm.People = db.define("GQL_people", {
     nickname:   { type: Sequelize.STRING(100), allowNull:  true }
 });
 
-//dm.Continent.hasMany(dm.Region);
-dm.Region.belongsTo(dm.Continent, { foreignKey: "id_continent"    });
+dm.Continent.hasMany(dm.Region, {  foreignKey: "GQLContinentId", as:'regions'});
+dm.Region.belongsTo(dm.Continent, {  foreignKey: "GQLContinentId", as:'continent'});
 dm.Kingdom.hasOne   (dm.Region,  {  foreignKey: "id_kingdom"   });
 dm.Kingdom.belongsTo(dm.House, { foreignKey: "id"    });
 dm.Title.belongsTo(dm.House, {  foreignKey: "id"    });
-/*
-Region.belongsTo(Continent, {foreignKey: 'id'});
-Kingdom.hasOne(Region, {foreignKey:'id_kingdom'});
-Kingdom.belongsTo(House, { foreignKey: 'id' })
-Title.belongsTo(House, {foreignKey: 'id'});*/
+
 
 db.sync();
 

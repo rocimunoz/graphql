@@ -11,10 +11,10 @@ var people = connector.dm.People;
 module.exports = {
   Query: {
         allContinents(_, args){
-          return continent.findAll({ include: [{ all: true, nested: true }]}, {where: args});
+          return continent.findAll({ include: [{ model: region, as:'regions'}]}, {where: args});
         },
         allRegions(_, args){
-            return region.findAll({include: [ { model: continent, as: 'GQL_continent' } ]}, {where: args});
+          return region.findAll({include: [ { model: continent, as:'continent'}  ]}, {where: args});
         },
         allKingdoms(_, args){
             return kingdom.findAll({where: args});
