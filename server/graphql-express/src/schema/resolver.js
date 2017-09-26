@@ -17,7 +17,7 @@ module.exports = {
           return region.findAll({include: [ { model: continent, as:'continent'}  ]}, {where: args});
         },
         allKingdoms(_, args){
-            return kingdom.findAll({where: args});
+            return kingdom.findAll({include: [ { model: region, as:'region'}  ]}, {where: args});
         },
         allHouses(_, args){
             return house.findAll({where: args});
