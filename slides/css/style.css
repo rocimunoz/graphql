@@ -760,12 +760,12 @@ label.slider input[type=range]::-webkit-slider-thumb {
     float:right;
 }
 
-#distributed #imgCentr {
+ .imgcenter {
     display: inline;
-    width: 550px;
-    position: absolute;
+    float:right;
+    /*position: absolute;
     top: -100px;
-    left: 1040px;
+    left: 1040px;*/
 }
 
 #distributed #imgDistr {
