@@ -94,27 +94,38 @@
             <div id="rest" class="step" data-x="8000" data-y="0">
                 <h3 class="pinkForeground"><b>REST (2000)</b></h3>
                 <ul>
-                    <li>Creado por Roy Fielding (padre de la especificación Http)</li>
                     <li>REST (Representational State Transfer)</li>
+                    <li>Creado por Roy Fielding (padre de la especificación Http)</li>
                     <li>Arquitectura para diseñar aplicaciones en red usando Http</b></li>
                     <li>Se basa en el uso de recursos y no de servicios</b></li>
-
-
                 </ul>
             </div>
 
             <div id="rest2" class="step" data-x="10000" data-y="0">
                 <h3 class="pinkForeground"><b>Principios REST API</b></h3>
-                <ul>
-                    <li>Recursos accesibles a traves de una url</li>
-                    <li>Metodos con significado (GET, POST, PUT) usando Http</li>
-                    <li>Respuesta en múltiples formatos (Json, Xml ... )</li>
-                    <li>Stateless</li>
-                    <li>Principio HATEOAS: respuesta en forma de hipervinculo</li>
+                <h4><b>Identificación de recursos</b></h4>
+                Acceso a los recursos a traves de Urls
+                <h4><b>Métodos con significado</b></h4>
+                (GET, POST, PUT) usando Http
+                <h4><b>Respuesta en multiples formatos</b></h4>
+                <h4><b>Principio HATEOAS: respuesta en forma de hipervinculo </b></h4>
+
+
                     https://www.adictosaltrabajo.com/tutoriales/spring-hateoas/
 
-                </ul>
             </div>
+
+            <div id="rest3" class="step" data-x="12000" data-y="0">
+                <h3 class="pinkForeground"><b>Ejemplo endpoints</b></h3>
+                GET /posts
+                GET /post/12
+                GET /post/12/comments
+                GET /post/12/comments/10
+                POST /posts/
+                DELETE /post/12
+            </div>
+
+
 
 
 
