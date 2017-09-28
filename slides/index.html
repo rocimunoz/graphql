@@ -50,25 +50,27 @@
             <!-- First Slide -->
             <div id="1" class="step" data-x="2000" data-y="0">
 
-                <h3><b> Un poco de historia</b></h3>
+                <h3 class="pinkForeground"><b> Un poco de historia</b></h3>
                 <ul>
-                    <li>Años 90: <b>COM</b>, <b>Corba</b>, <b>RMI</b> para comunicación distribuida</li>
-                    <li>Año 1998: Nace <b>SOAP</b> como protocolo de acceso a objetos</li>
-                    <li>Año 2000: Roy Fielding crea <b>REST APi</b></li>
-                    <li>Año 2015: Facebook crea <b>Graphql</b></li>
+                    <li>Años 90: <b>COM</b>, <span class="pinkForeground">Corba</span>, <b>RMI</b> para comunicación distribuida</li>
+                    <li>Año 1998: Nace <span class="pinkForeground">SOAP</span> como protocolo de acceso a objetos</li>
+                    <li>Año 2000: Roy Fielding crea <span class="pinkForeground">REST Api</span></li>
+                    <li>Año 2015: Facebook crea <span class="pinkForeground">GraphQL</span></li>
 
                 </ul>
             </div>
             <!-- Second Slide -->
             <div id="corba" class="step" data-x="4000" data-y="0">
                 <!--<h2><span class="pinkBack">Cronologia</span></h2>-->
-                <h3><b> Corba (años 90)</b></h3>
+                <h3 class="pinkForeground"><b> Corba (años 90)</b></h3>
 <span>
                 <ul>
-                    <li>Estandar de comunicaciones</li>
+                    <li>Estandar para la comunicación de objetos distribuidos</li>
                     <li>Independencia del lenguaje entre cliente y servidor</li>
-                    <li>Envio de mensajes a través de TCP/IP</li>
-                    <li>Costoso y complejo</li>
+                    <li>Comunicación TCP/IP. Problemas con cortafuegos</li>
+                    <li>Especificación compleja y cara de implementar</li>
+                    <li>APIs incompletas y dificiles de utilizar</li>
+
                 </ul>
               </span>
                 <p><span >
@@ -78,24 +80,38 @@
 
             <!-- Third Slide -->
             <div id="soap" class="step" data-x="6000" data-y="0">
-
-                <h3><b> Soap</b></h3>
+                <h3 class="pinkForeground"><b> Soap (1998)</b></h3>
                 <ul>
-                    <li>Años 90: <b>COM</b>, <b>Corba</b>, <b>RMI</b> para comunicación distribuida</li>
+                    <li>Protocolo de comunicación en entornos distribuidos</li>
+                    <li>Utiliza XML para el almacenamiento de datos</li>
+                    <li>Comunicación usando Http</li>
+                    <li>Es lento</li>
+                    <li>Dependencica de WSDL</li>
+                </ul>
+            </div>
+
+            <!-- 4 Slide -->
+            <div id="rest" class="step" data-x="8000" data-y="0">
+                <h3 class="pinkForeground"><b>REST (2000)</b></h3>
+                <ul>
+                    <li>Creado por Roy Fielding (padre de la especificación Http)</li>
+                    <li>REST (Representational State Transfer)</li>
+                    <li>Arquitectura para diseñar aplicaciones en red usando Http</b></li>
+                    <li>Se basa en el uso de recursos y no de servicios</b></li>
 
 
                 </ul>
             </div>
 
-            <!-- Third Slide -->
-            <div id="rest" class="step" data-x="8000" data-y="0">
-
-                <h3><b> Un poco de historia</b></h3>
+            <div id="rest2" class="step" data-x="10000" data-y="0">
+                <h3 class="pinkForeground"><b>Principios REST API</b></h3>
                 <ul>
-                    <li>Años 90: <b>COM</b>, <b>Corba</b>, <b>RMI</b> para comunicación distribuida</li>
-                    <li>Año 1998: Nace <b>SOAP</b> como protocolo de acceso a objetos</li>
-                    <li>Año 2000: Roy Fielding crea <b>REST APi</b></li>
-                    <li>Año 2015: Facebook crea Graphql</li>
+                    <li>Recursos accesibles a traves de una url</li>
+                    <li>Metodos con significado (GET, POST, PUT) usando Http</li>
+                    <li>Respuesta en múltiples formatos (Json, Xml ... )</li>
+                    <li>Stateless</li>
+                    <li>Principio HATEOAS: respuesta en forma de hipervinculo</li>
+                    https://www.adictosaltrabajo.com/tutoriales/spring-hateoas/
 
                 </ul>
             </div>
