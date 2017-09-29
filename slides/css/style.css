@@ -46,7 +46,7 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
-ol, ul {
+ ul {
     list-style: none;
 }
 blockquote, q {
@@ -1005,6 +1005,8 @@ label.slider input[type=range]::-webkit-slider-thumb {
     top: -200px;
     left: 575px;
 }
+
+
 
 code .shell{
     color: rgb(255,0,0);
