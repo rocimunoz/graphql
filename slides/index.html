@@ -143,18 +143,80 @@
                 </span>
             </div>
             <!-- 8 Slide -->
-            <div id="problemas_rest" class="step" data-x="18000" data-y="0">
+            <div id="rest_latencia" class="step" data-x="18000" data-y="0">
                 <h3 class="pinkForeground"><b>Problemas de API Rest</b></h3>
-                <p><b>Problemas de latencia</b></p>
-                <span>
+                <p><b>1. Problemas de latencia</b></p>
+                <p>
                     <img id="rest_request" src="images/rest_request.png" alt="git">
-                </span>
+                </p>
             </div>
 
-            <!-- 8 Slide -->
-            <div id="graphql" class="step" data-x="20000" data-y="0">
-                <h3 class="pinkForeground"><b>Hablemos de Grahpl ...</b></h3>
+            <!-- 9 Slide -->
+            <div id="rest_payload" class="step" data-x="20000" data-y="0">
+                <h3 class="pinkForeground"><b>Problemas de API Rest</b></h3>
+                <p><b>2. Tamaño Payload</b></p>
+                La respuesta o payload es muy grande. ¿Necesitamos todos los datos?
+            </div>
 
+            <!-- 10 Slide -->
+            <div id="rest_custom" class="step" data-x="22000" data-y="0">
+                <h3 class="pinkForeground"><b>Problemas de API Rest</b></h3>
+                <p><b>3. Custom Endpoints</b></p>
+                Necesidades del proyecto despues de haber diseñado nuestros endpoints
+            </div>
+
+            <!-- 11 Slide -->
+            <div id="rest_version" class="step" data-x="24000" data-y="0">
+                <h3 class="pinkForeground"><b>Problemas de API Rest</b></h3>
+                <p><b>3. Versionado de endpoints</b></p>
+                ¿Cómo mantenemos los endpoints de versiones anteriores?<br/><br/>
+                <i>api/v1/article/1</i><br/>
+                <i>api/v2/article/1</i>
+            </div>
+
+            <!-- 12 Slide -->
+            <div id="graphql" class="step" data-x="26000" data-y="0">
+                <h3 class="pinkForeground"><b>Hablemos de Grahpl ...</b>
+                  <img src="images/logo.png" alt="git">
+                </h3>
+                <ul>
+                  <li><u>Especificación</u> nacida en 2012 como solución a un problema de producto en Facebook</li>
+                  <li>Redefine la forma en la que pedimos datos al backend</li>
+                  <li>No trabaja con endpoints. <u>!!! Unico punto de entrada!!!</u></li>
+                  <li>Servidor devuelve <u>sólo</u> lo que graphql pide</li>
+                  <li>Sistema de tipado entre campos</li>
+                  <li>Anidamiento de consultas</li>
+                </ul>
+                <br/>
+            </div>
+
+            <!-- 13 Slide -->
+            <div id="graphql_request" class="step" data-x="28000" data-y="0">
+                <h3 class="pinkForeground">/graphql</h3>
+                  <img src="images/graphql_request.png" alt="git">
+                </h3>
+                <br/>
+                Necesario Schema y Resolver
+            </div>
+
+            <!-- 14 Slide -->
+            <div id="schema" class="step" data-x="30000" data-y="0">
+                <h3 class="pinkForeground"><b>Schema (SDL)</b>
+                </h3>
+                <ul>
+                  <li>Collección de tipos Graphql (queries, muation, type)</li>
+                  <li>Nos permite expresar relaciones entre tipos</li>
+                  <li><span class="pinkForeground">!</span> expresa que un campo es obligatorio</u></li>
+
+                </ul>
+                <code>
+                  type Person {<br/>
+                               name: String!<br/>
+                               age: Int!<br/>
+                               posts: [Post!]!<br/>
+                             }
+                </code>
+                <br/>
             </div>
         </div>
 
