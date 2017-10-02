@@ -190,19 +190,10 @@
                 <br/>
             </div>
 
-
             <!-- 13 Slide -->
             <div id="graphql_server" class="step" data-x="28000" data-y="0">
-                <h3 class="pinkForeground">Graphql-Server  + Graphi</h3>
-                  <img src="images/demo_arquitectura.png" alt="git">
-
-                <br/>
-            </div>
-
-            <!-- 13 Slide -->
-            <div id="graphql_server2" class="step" data-x="30000" data-y="0">
                 <h3 class="pinkForeground">Construyendo el servidor</h3>
-                <img id="graphql-server" src="images/demo_arquitectura.png" alt="git">
+                <img class="img_right" src="images/demo_arquitectura.png" alt="git">
                 <ul><li><b>Java</b> : Graphql-java</li>
                 <li><b>JS</b>: Apollo-server</li>
                 <li><b>Elixir</b>: Phoenix</li>
@@ -212,36 +203,71 @@
             </div>
 
             <!-- 14 Slide -->
-            <div id="schema" class="step" data-x="32000" data-y="0">
+            <div id="schema" class="step" data-x="30000" data-y="0">
                 <h3 class="pinkForeground"><b>Schema (SDL)</b>
                 </h3>
                 <ul>
                   <li>Colección de tipos Graphql (queries, mutation, type)</li>
-                  <li>Nos permite expresar relaciones entre tipos</li>
-                  <li><span class="pinkForeground">!</span> expresa que un campo es obligatorio</u></li>
+                  <li><u>Types:</u> Modelo de datos</li>
+                  <li><u>Queries:</u> representan las consultas</li>
+                  <li><u>Mutation:</u> consultas que alteran datos (updates, insert, deletes)</li>
+                </ul>
+            </div>
 
+            <div id="schema_types" class="step" data-x="32000" data-y="0">
+                <h3 class="pinkForeground"><b>Schema (SDL): Types</b></h3>
+                <ul>
+                  <li>Modelo de datos tipado</li>
+                  <li>Paso de parámetros</li>
+                  <li><span class="pinkForeground">!</span> indica campos obligatorios</li>
+                  <li>Anidamiento de consultas</li>
                 </ul>
                 <code>
-                  type Person {<br/>
-                               name: String!<br/>
-                               age: Int!<br/>
-                               posts: [Post!]!<br/>
-                             }
+                  type Author{<br/>
+                    <span class="indent">id: Int!</span></br>
+                    <span class="indent">firstName: String!</span></br>
+                    <span class="indent">lastName: String!</span></br>
+                    <span class="indent">books: [Book!]!</span></br>
+                  }
                 </code>
-                <br/>
+            </div>
+
+            <div id="schema_queries" class="step" data-x="34000" data-y="0">
+                <h3 class="pinkForeground"><b>Schema (SDL): Queries</b></h3>
+                <ul>
+                  <code>
+                    type Query{<br/>
+                      <span class="indent">allBooks: [Book!]!</span></br>
+                      <span class="indent">allAuthors: [Author!]!</span></br>
+
+                    }
+                  </code>
+                </ul>
+            </div>
+
+            <div id="schema_mutation" class="step" data-x="36000" data-y="0">
+                <h3 class="pinkForeground"><b>Schema (SDL): Mutations</b></h3>
+                <ul>
+                  <code>
+                    mutation createBook(){
+                      revisar
+                    }
+                  </code>
+                </ul>
             </div>
 
             <!-- 15 Slide -->
-            <div id="resolver" class="step" data-x="34000" data-y="0">
+            <div id="resolver" class="step" data-x="38000" data-y="0">
                 <h3 class="pinkForeground"><b>Resolver</b>
                 </h3>
                 <ul>
                   <li>Funciones que indican como resolver la consultas sobre el schema</li>
                 </ul>
-                <code>Query: {<br/>
-                              allPeople(obj, args, context, info) {<br/>
-                                return findAll(people, { id: args.id });<br/>
-                        },<br/>
+                <code>
+                  Query: {<br/>
+                    <span class="indent">allPeople(obj, args, context, info) {</span></br>
+                        <span class="indent">return findAll(people, { id: args.id });</span><br/>
+                        <span class="indent">},</span><br/>
                       },<br/>
                 </code>
                 <br/>

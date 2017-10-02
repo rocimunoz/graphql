@@ -1006,10 +1006,9 @@ label.slider input[type=range]::-webkit-slider-thumb {
     left: 575px;
 }
 
-#graphql-server{
+.img_right{
   display: inline;
   float:right;
-
 }
 
 
