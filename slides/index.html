@@ -190,21 +190,33 @@
                 <br/>
             </div>
 
+
             <!-- 13 Slide -->
-            <div id="graphql_request" class="step" data-x="28000" data-y="0">
-                <h3 class="pinkForeground">/graphql</h3>
-                  <img src="images/graphql_request.png" alt="git">
-                </h3>
+            <div id="graphql_server" class="step" data-x="28000" data-y="0">
+                <h3 class="pinkForeground">Graphql-Server  + Graphi</h3>
+                  <img src="images/demo_arquitectura.png" alt="git">
+
                 <br/>
-                Necesario Schema y Resolver
+            </div>
+
+            <!-- 13 Slide -->
+            <div id="graphql_server2" class="step" data-x="30000" data-y="0">
+                <h3 class="pinkForeground">Construyendo el servidor</h3>
+                <img id="graphql-server" src="images/demo_arquitectura.png" alt="git">
+                <ul><li><b>Java</b> : Graphql-java</li>
+                <li><b>JS</b>: Apollo-server</li>
+                <li><b>Elixir</b>: Phoenix</li>
+                <li><b>Ruby</b>: Graphql-gem</li>
+                <li><b>Python</b>: Graphene</li></ul>
+
             </div>
 
             <!-- 14 Slide -->
-            <div id="schema" class="step" data-x="30000" data-y="0">
+            <div id="schema" class="step" data-x="32000" data-y="0">
                 <h3 class="pinkForeground"><b>Schema (SDL)</b>
                 </h3>
                 <ul>
-                  <li>Collección de tipos Graphql (queries, muation, type)</li>
+                  <li>Colección de tipos Graphql (queries, mutation, type)</li>
                   <li>Nos permite expresar relaciones entre tipos</li>
                   <li><span class="pinkForeground">!</span> expresa que un campo es obligatorio</u></li>
 
@@ -215,6 +227,22 @@
                                age: Int!<br/>
                                posts: [Post!]!<br/>
                              }
+                </code>
+                <br/>
+            </div>
+
+            <!-- 15 Slide -->
+            <div id="resolver" class="step" data-x="34000" data-y="0">
+                <h3 class="pinkForeground"><b>Resolver</b>
+                </h3>
+                <ul>
+                  <li>Funciones que indican como resolver la consultas sobre el schema</li>
+                </ul>
+                <code>Query: {<br/>
+                              allPeople(obj, args, context, info) {<br/>
+                                return findAll(people, { id: args.id });<br/>
+                        },<br/>
+                      },<br/>
                 </code>
                 <br/>
             </div>

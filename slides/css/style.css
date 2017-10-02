@@ -1006,6 +1006,12 @@ label.slider input[type=range]::-webkit-slider-thumb {
     left: 575px;
 }
 
+#graphql-server{
+  display: inline;
+  float:right;
+
+}
+
 
 
 code .shell{
