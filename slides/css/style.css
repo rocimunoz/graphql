@@ -752,14 +752,7 @@ label.slider input[type=range]::-webkit-slider-thumb {
 
 /* ABSOLUTE POSITIONING OF IMAGES */
 
-#epikurus img {
-    animation: translate-epikurus 3s infinite alternate ease-in-out;
-}
 
-
-#history img {
-    float:right;
-}
 
  .imgcenter {
     display: inline;
@@ -767,234 +760,6 @@ label.slider input[type=range]::-webkit-slider-thumb {
     /*position: absolute;
     top: -100px;
     left: 1040px;*/
-}
-
-#distributed #imgDistr {
-    display: inline;
-    width: 520px;
-    position: absolute;
-    top: 340px;
-    left: 1060px;
-}
-
-#init #imgInit {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top: -200px;
-    left: 1000px;
-}
-
-#add #imgThreeTrees img {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top: -20px;
-    left: 900px;
-}
-
-#add #imgTouch {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top: 430px;
-    left: 900px;
-}
-
-
-#add #imgAdd {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top: 700px;
-    left: 900px;
-}
-
-#commit #imgCommit {
-    display: inline;
-    width: 1100px;
-    position: absolute;
-    top: -530px;
-    left: 790px;
-}
-
-#commit #imgCommit2 {
-    display: inline;
-    width: 750px;
-    position: absolute;
-    top: 100px;
-    left: 920px;
-}
-
-#branch #imgBranch {
-    display: inline;
-    width: 800px;
-    position: absolute;
-    top: -270px;
-    left: 940px;
-}
-
-#branch #cactusImg {
-    display: inline;
-    width: 150px;
-    position: absolute;
-    top: 50px;
-    left: 750px;
-}
-
-#branch #imgCheckout {
-    display: inline;
-    width: 800px;
-    position: absolute;
-    top: 270px;
-    left: 940px;
-}
-
-#merge #imgMergeImage {
-    display: inline;
-    width: 1000px;
-    position: absolute;
-    top: -300px;
-    left: 710px;
-}
-
-#mergeSecond #imgMergeImageSecond {
-    display: inline;
-    width: 650px;
-    position: absolute;
-    top: -180px;
-    left: 990px;
-}
-
-#conflict #conflictsImg {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top: 100px;
-    left: 600px;
-}
-
-#remote #imgRemote {
-    display: inline;
-    width: 730px;
-    position: absolute;
-    top: -250px;
-    left:840px;
-}
-
-#clone #imgClone {
-    display: inline;
-    width: 1000px;
-    position: absolute;
-    top: 444px;
-    left:290px;
-}
-
-#clone #sheepImg {
-    display: inline;
-    width: 100px;
-    position: absolute;
-    top: 20px;
-    left: 790px;
-}
-
-#fetch #tazImg {
-    display: inline;
-    width: 120px;
-    position: absolute;
-    top: 0px;
-    left: -130px;
-}
-
-#fetch #imgFetch {
-    display: inline;
-    width: 1000px;
-    position: absolute;
-    top: 444px;
-    left:290px;
-}
-
-#pull #imgPull {
-    display: inline;
-    width: 1000px;
-    position: absolute;
-    top: 444px;
-    left:290px;
-}
-
-#push #imgPush {
-    display: inline;
-    width: 1000px;
-    position: absolute;
-    top: 444px;
-    left:290px;
-}
-
-#danger #imgDanger {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top:0px;
-    left: 1080px;
-}
-
-#history #pillarImg {
-    display: inline;
-    width: 100px;
-    position: absolute;
-    top: 30px;
-    left: 350px;
-    transform: rotateZ(90deg);
-}
-
-#pull #canoeImg {
-    display: inline;
-    width: 200px;
-    position: absolute;
-    top: 0px;
-    left: 500px;
-    transform: rotateZ(90deg);
-}
-
-#push #babyImg {
-    display: inline;
-    width: 200px;
-    position: absolute;
-    top: 0px;
-    left: 575px;
-}
-
-#danger #dangerImg {
-    display: inline;
-    width: 100px;
-    position: absolute;
-    top: 30px;
-    left: 550px;
-    transform: rotateZ(90deg);
-}
-
-#tips #imgTips {
-    display: inline;
-    width: 500px;
-    position: absolute;
-    top: 100px;
-    left: 1200px;
-}
-
-#workflows #imgWorkflows {
-    display: inline;
-    width: 600px;
-    position: absolute;
-    top: 0px;
-    left: 1000px;
-}
-
-#workflows #imgWorkflows2 {
-    display: inline;
-    width: 550px;
-    position: absolute;
-    top: 530px;
-    left: 0px;
 }
 
 /* The git logo */
@@ -1009,6 +774,24 @@ label.slider input[type=range]::-webkit-slider-thumb {
 .img_right{
   display: inline;
   float:right;
+}
+
+.border_rounded {
+    border-radius: 25px;
+    border: 2px solid #e10098;;
+    padding: 20px;
+    
+}
+
+div .col_left{
+  display:inline;
+  float:left;
+}
+
+div .col_right{
+  display:inline;
+  float:right;
+  padding-right:200px;
 }
 
 

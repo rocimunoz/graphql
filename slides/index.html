@@ -213,15 +213,18 @@
                   <li><u>Mutation:</u> consultas que alteran datos (updates, insert, deletes)</li>
                 </ul>
             </div>
-
+            <!-- 15 Slide -->
             <div id="schema_types" class="step" data-x="32000" data-y="0">
                 <h3 class="pinkForeground"><b>Schema (SDL): Types</b></h3>
+                <div class="col_left">
                 <ul>
                   <li>Modelo de datos tipado</li>
                   <li>Paso de parámetros</li>
                   <li><span class="pinkForeground">!</span> indica campos obligatorios</li>
                   <li>Anidamiento de consultas</li>
                 </ul>
+              </div>
+                  <div class="col_right border_rounded">
                 <code>
                   type Author{<br/>
                     <span class="indent">id: Int!</span></br>
@@ -229,40 +232,55 @@
                     <span class="indent">lastName: String!</span></br>
                     <span class="indent">books: [Book!]!</span></br>
                   }
-                </code>
+                </code></div>
             </div>
-
+            <!-- 16 Slide -->
             <div id="schema_queries" class="step" data-x="34000" data-y="0">
                 <h3 class="pinkForeground"><b>Schema (SDL): Queries</b></h3>
+                <div class="col_left">
                 <ul>
+                  <li>Consulta para obtener datos en modo lectura (GET)</li>
+                  <li>Se realizan de forma asincrona</li>
+
+                </ul>
+              </div>
+                <div class="col_right border_rounded">
                   <code>
                     type Query{<br/>
                       <span class="indent">allBooks: [Book!]!</span></br>
                       <span class="indent">allAuthors: [Author!]!</span></br>
-
                     }
                   </code>
-                </ul>
+                </div>
             </div>
-
+            <!-- 17 Slide -->
             <div id="schema_mutation" class="step" data-x="36000" data-y="0">
                 <h3 class="pinkForeground"><b>Schema (SDL): Mutations</b></h3>
+                <div class="col_left">
                 <ul>
+                  <li>Consulta para alterar datos (POST)</li>
+                  <li>Se realizan de forma sincrona</li>
+                </ul>
+              </div>
+                <div class="col_right border_rounded">
                   <code>
                     mutation createAuthor(name:"Pepe", lastName:"Garcia"){
                       name
                     }
                   </code>
-                </ul>
+                </div>
             </div>
 
-            <!-- 15 Slide -->
+            <!-- 18 Slide -->
             <div id="resolver" class="step" data-x="38000" data-y="0">
                 <h3 class="pinkForeground"><b>Resolver</b>
                 </h3>
+                <div class="col_left">
                 <ul>
                   <li>Funciones que indican como resolver la consultas sobre el schema</li>
                 </ul>
+              </div>
+                <div class="col_right border_rounded">
                 <code>
                   Query: {<br/>
                     <span class="indent">allPeople(obj, args, context, info) {</span></br>
@@ -270,10 +288,31 @@
                         <span class="indent">},</span><br/>
                       },<br/>
                 </code>
-                <br/>
+              </div>
+
+            </div>
+            <!-- 19 Slide -->
+            <div id="response" class="step" data-x="40000" data-y="0">
+                <h3 class="pinkForeground"><b>¿Y la respuesta?</b>
+                </h3>
+                <div class="col_left">
+                <ul>
+                  <li>json con 2 elementos (data y error)</li>
+                </ul>
+              </div>
+                <div class="col_right border_rounded">
+
+                <code>
+                  {"data":<br/>
+                  <span class="indent">{"allBooks":[]}</span><br/>
+                  }
+                </code>
+              </div>
+
             </div>
 
-            <div id="graphi" class="step" data-x="40000" data-y="0">
+            <!-- 20 Slide -->
+            <div id="graphi" class="step" data-x="42000" data-y="0">
                 <h3 class="pinkForeground"><b>Graphi</b>
                 </h3>
                 <ul>
@@ -282,7 +321,6 @@
                 <img src="images/graphi.png">
                 <br/>
             </div>
-
         </div>
 
         <script src="js/impress.js"></script>
