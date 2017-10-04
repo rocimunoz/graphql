@@ -45,8 +45,11 @@ dm.People = db.define("people", {
 
 dm.Continent.hasMany(dm.Region, {  foreignKey: "id_continent", as:'regions'});
 dm.Region.belongsTo(dm.Continent, {  foreignKey: "id_continent", as:'continent'});
-dm.Kingdom.hasOne   (dm.Region,  {  foreignKey: "id_kingdom", as:'region'});
+dm.Region.belongsTo(dm.Kingdom, {  foreignKey: "id_kingdom", as:'kingdom'});
+dm.Kingdom.hasMany(dm.Region, {  foreignKey: "id_kingdom", as:'regions'});
 dm.Kingdom.belongsTo(dm.House, { foreignKey: "id_house", as:'house'    });
+dm.House.hasMany(dm.Title, {  foreignKey: "id_house", as:'titles'});
+dm.House.hasMany(dm.People, {  foreignKey: "id_house", as:'people'});
 dm.Title.belongsTo(dm.House, {  foreignKey: "id_house", as:'house'    });
 dm.People.belongsTo(dm.House, {  foreignKey: "id_house", as:'house'    });
 

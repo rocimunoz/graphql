@@ -21,8 +21,8 @@ const typeDefs = `
     id: ID!
     name: String!
     capital: String!
-    regions:[Region]
     house: House
+    regions: [Region]
   }
 
   type House {
@@ -36,14 +36,15 @@ const typeDefs = `
 
   type Title {
     id: ID!
-    name: String!,
-    id_house: House!
+    name: String!
+    house: House
   }
 
   type People {
     id: ID!
     name: String!
     nickname: String
+    house: House
   }
 
   type Query {

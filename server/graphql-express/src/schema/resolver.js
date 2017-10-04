@@ -14,19 +14,19 @@ module.exports = {
           return continent.findAll({ include: [{ model: region, as:'regions'}]}, {where: args});
         },
         allRegions(_, args){
-          return region.findAll({include: [ { model: continent, as:'continent'}  ]}, {where: args});
+          return region.findAll({include: [ { model: continent, as:'continent'}, { model: kingdom, as:'kingdom'} ]}, {where: args});
         },
         allKingdoms(_, args){
-            return kingdom.findAll({include: [ { model: region, as:'region'}  ]}, {where: args});
+            return kingdom.findAll({include: [ { model: region, as:'regions'}, { model: house, as:'house'}  ]}, {where: args});
         },
         allHouses(_, args){
-            return house.findAll({where: args});
+            return house.findAll({ include: [{ model: title, as:'titles'}, { model: people, as:'people'}]}, {where: args});
         },
         allTitles(_, args){
-            return title.findAll({where: args});
+            return title.findAll({ include: [{ model: house, as:'house'}]}, {where: args});
         },
         allPeople(_, args){
-            return people.findAll({where: args});
+            return people.findAll({ include: [{ model: house, as:'house'}]}, {where: args});
         },
     },
 
