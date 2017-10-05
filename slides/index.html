@@ -312,7 +312,38 @@
             </div>
 
             <!-- 20 Slide -->
-            <div id="graphi" class="step" data-x="42000" data-y="0">
+            <div id="introspection" class="step" data-x="42000" data-y="0">
+                <h3 class="pinkForeground"><b>Introspeccion</b>
+                </h3>
+                <div class="col_left">
+                <ul>
+                  <li>Permite autodocumentarse usando introspección
+                  <li>__type</li>
+                  <li>__schema</li>
+
+                </ul>
+              </div>
+                <div class="col_right border_rounded">
+                <code>
+                  query ObjectType {
+                    __type(name: "Book") {
+                      kind
+                      name
+                      fields {
+                        name
+                        description
+                        type {
+                          name
+                        }
+                      }
+                    }
+                  }
+                </code>
+              </div>
+            </div>
+
+            <!-- 21 Slide -->
+            <div id="graphi" class="step" data-x="44000" data-y="0">
                 <h3 class="pinkForeground"><b>Graphi</b>
                 </h3>
                 <ul>
@@ -322,8 +353,22 @@
                 <br/>
             </div>
 
+            <!-- 22 Slide -->
+            <div id="companies" class="step" data-x="46000" data-y="0">
+                <h3 class="pinkForeground"><b>¿Quién está usando ya Graphql?</b>
+                </h3>
+                <ul>
+                  <li>Facebook</li>
+                  <li>Github</li>
+                  <li>Pinterest</li>
+                  <li>Twitter</li>
+                  <li>Coursera</li>
+                  <li>Salesforce</li>
+                </ul>
+            </div>
+
             <!-- 21 Slide -->
-            <div id="demo" class="step" data-x="44000" data-y="0">
+            <div id="demo" class="step" data-x="46000" data-y="0">
                 <h3 class="pinkForeground"><b>Demo </b>
                 </h3>
                 <div class="col_left">
