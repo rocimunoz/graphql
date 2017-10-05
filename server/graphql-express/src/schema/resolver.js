@@ -28,7 +28,13 @@ module.exports = {
         allPeople(_, args){
             return people.findAll({ include: [{ model: house, as:'house'}]}, {where: args});
         },
+
     },
+    Mutation:{
+      createPeople(_, args){
+        return people.create({id: 6, name: 'rocio'},{fields:['id','name']});
+      }
+    }
 
 
 };

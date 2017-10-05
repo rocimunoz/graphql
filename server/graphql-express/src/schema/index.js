@@ -56,6 +56,11 @@ const typeDefs = `
     allPeople: [People!]!
   }
 
+  type Mutation{
+    createPeople(id:ID!, name: String!): People
+
+  }
+
 `;
 
 // Generate the schema object from your types definition.
