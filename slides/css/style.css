@@ -780,7 +780,7 @@ label.slider input[type=range]::-webkit-slider-thumb {
     border-radius: 25px;
     border: 2px solid #e10098;;
     padding: 20px;
-    
+
 }
 
 div .col_left{
@@ -792,6 +792,12 @@ div .col_right{
   display:inline;
   float:right;
   padding-right:200px;
+}
+
+.cross_out{
+  !important;
+  text-decoration:line-through;
+  color:#e10098
 }
 
 

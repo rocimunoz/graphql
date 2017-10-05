@@ -112,8 +112,9 @@
                   <li><b>Respuesta en multiples formatos</b></li>
                   Json, Xml ...
                   <li><b>Principio HATEOAS: respuesta en forma de hipervinculo</b></li>
+                  Información en forma de hipervinculos a otros recursos
                 </ol>
-                    https://www.adictosaltrabajo.com/tutoriales/spring-hateoas/
+
 
             </div>
             <!-- 6 Slide -->
@@ -122,13 +123,28 @@
             </div>
 
             <div id="rest4" class="step" data-x="14000" data-y="0">
-                <h3 class="pinkForeground"><b>Ejemplo endpoints</b></h3>
-                <p>GET /posts</p>
-                <p>GET /post/12</p>
-                <p>GET /post/12/comments</p>
-                <p>GET /post/12/comments/10</p>
-                <p>POST /posts/</p>
-                <p>DELETE /post/12</p>
+                <h3 class="pinkForeground"><b>Principio Hateoas</b></h3>
+                <div class="col_left">
+              <code>
+                {
+                  "id": 78,<br/>
+                  "nombre": "Juan",<br/>
+                  "apellido": "García",<br/>
+                  "coches": [{"id": 1033}]<br/>
+                }
+              </code>
+            </div>
+            <div class="col_right border_rounded">
+              <code>
+                {
+                  "id": 78,<br/>
+                  "nombre": "Juan",<br/>
+                  "apellido": "García",<br/>
+                  <span class="pinkBack">coches": [{"coche": "http://server/78/coches/1033"},]</span><br/>
+                 }
+              </code>
+            </div>
+
             </div>
             <!-- 7 Slide -->
             <div id="facebook" class="step" data-x="16000" data-y="0">
@@ -155,14 +171,30 @@
             <div id="rest_payload" class="step" data-x="20000" data-y="0">
                 <h3 class="pinkForeground"><b>Problemas de API Rest</b></h3>
                 <p><b>2. Tamaño Payload</b></p>
-                La respuesta o payload es muy grande. ¿Necesitamos todos los datos?
+                La respuesta o payload es muy grande. ¿Necesitamos todos los datos?<br/>
+                <code>
+
+                  {<br/>
+                    "id": 78,<br/>
+                    "nombre": "Juan",<br/>
+                    <span class="cross_out">"apellido": "García",</span><br/>
+                    <span class="cross_out">"edad": "García",</span><br/>
+                    "dni": "72057643F",</span><br/>
+                    <span class="cross_out">"direccion": "Calle xxxx",</span><br/>
+                  }
+                </code>
             </div>
 
             <!-- 10 Slide -->
             <div id="rest_custom" class="step" data-x="22000" data-y="0">
                 <h3 class="pinkForeground"><b>Problemas de API Rest</b></h3>
                 <p><b>3. Custom Endpoints</b></p>
-                Necesidades del proyecto despues de haber diseñado nuestros endpoints
+                Necesidades del proyecto despues de haber diseñado nuestros endpoints<br/><br/>
+                /get/users/<br/>
+                /get/users/123<br/>
+                /get/users/123/comments<br/>
+                /get/users/123/comments/111<br/>
+              <span class="pinkForeground">/commentsFilterWords</span><br/>
             </div>
 
             <!-- 11 Slide -->
@@ -317,7 +349,7 @@
                 </h3>
                 <div class="col_left">
                 <ul>
-                  <li>Permite autodocumentarse usando introspección
+                  <li>Graphql se autodocumenta!!!! usando introspección
                   <li>__type</li>
                   <li>__schema</li>
 
